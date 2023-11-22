@@ -5,10 +5,34 @@ import { Routes, RouterModule } from '@angular/router';
 // project import
 import { AdminComponent } from './theme/layout/admin/admin.component';
 import { GuestComponent } from './theme/layout/guest/guest.component';
+import { IbrixAppComponent } from './ibrix-app/ibrix-app.component';
+import { LoginComponent } from './ibrix-app/login/login.component';
 
 const routes: Routes = [
+  /**  New URL Paths */
   {
-    path: '',
+    path:'',
+    component: IbrixAppComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/login',
+        pathMatch: 'full'
+      },
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'migration',
+        loadChildren: () => import('./ibrix-app/migration/migration.module').then((m) => m.MigrationModule)
+      }
+
+    ]
+  },
+  /**  Old URL Paths */
+  {
+    path: 'old',
     component: AdminComponent,
     children: [
       {

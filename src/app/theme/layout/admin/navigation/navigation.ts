@@ -20,6 +20,40 @@ export interface NavigationItem {
 
 export const NavigationItems: NavigationItem[] = [
   {
+    id: 'ibrix-migration',
+    title: 'Migration',
+    type: 'group',
+    icon: 'icon-group',
+    children: [
+      {
+        id: 'configuration',
+        title: 'Configuration',
+        type: 'item',
+        url: '/migration/configuration',
+        icon: 'feather icon-settings'
+      },{
+        id: 'assessment',
+        title: 'Assessment',
+        type: 'item',
+        url: '/migration/assessment',
+        icon: 'feather icon-check-squre'
+      },{
+        id: 'etl-scripts',
+        title: 'ETL Scripts',
+        type: 'item',
+        url: '/migration/etl-scripts',
+        icon: 'feather icon-book-open'
+      },{
+        id: 'migrate-data',
+        title: 'Migrate Data',
+        type: 'item',
+        url: '/migration/migrate-data',
+        icon: 'feather icon-upload  '
+      },
+    ]
+  },
+  /** Old navs */
+  {
     id: 'navigation',
     title: 'Navigation',
     type: 'group',
@@ -29,7 +63,7 @@ export const NavigationItems: NavigationItem[] = [
         id: 'dashboard',
         title: 'Dashboard',
         type: 'item',
-        url: '/analytics',
+        url: 'analytics',
         icon: 'feather icon-home'
       }
     ]
@@ -50,37 +84,37 @@ export const NavigationItems: NavigationItem[] = [
             id: 'button',
             title: 'Button',
             type: 'item',
-            url: '/component/button'
+            url: 'component/button'
           },
           {
             id: 'badges',
             title: 'Badges',
             type: 'item',
-            url: '/component/badges'
+            url: 'component/badges'
           },
           {
             id: 'breadcrumb-pagination',
             title: 'Breadcrumb & Pagination',
             type: 'item',
-            url: '/component/breadcrumb-paging'
+            url: 'component/breadcrumb-paging'
           },
           {
             id: 'collapse',
             title: 'Collapse',
             type: 'item',
-            url: '/component/collapse'
+            url: 'component/collapse'
           },
           {
             id: 'tabs-pills',
             title: 'Tabs & Pills',
             type: 'item',
-            url: '/component/tabs-pills'
+            url: 'component/tabs-pills'
           },
           {
             id: 'typography',
             title: 'Typography',
             type: 'item',
-            url: '/component/typography'
+            url: 'component/typography'
           }
         ]
       }
@@ -122,7 +156,7 @@ export const NavigationItems: NavigationItem[] = [
         id: 'apexchart',
         title: 'ApexChart',
         type: 'item',
-        url: '/chart',
+        url: 'chart',
         classes: 'nav-item',
         icon: 'feather icon-pie-chart'
       }
@@ -138,7 +172,7 @@ export const NavigationItems: NavigationItem[] = [
         id: 'forms',
         title: 'Basic Elements',
         type: 'item',
-        url: '/forms',
+        url: 'forms',
         classes: 'nav-item',
         icon: 'feather icon-file-text'
       },
@@ -146,7 +180,7 @@ export const NavigationItems: NavigationItem[] = [
         id: 'tables',
         title: 'tables',
         type: 'item',
-        url: '/tables',
+        url: 'tables',
         classes: 'nav-item',
         icon: 'feather icon-server'
       }
@@ -162,7 +196,7 @@ export const NavigationItems: NavigationItem[] = [
         id: 'sample-page',
         title: 'Sample Page',
         type: 'item',
-        url: '/sample-page',
+        url: 'sample-page',
         classes: 'nav-item',
         icon: 'feather icon-sidebar'
       },

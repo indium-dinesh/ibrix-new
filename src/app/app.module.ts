@@ -23,6 +23,7 @@ import { NavCollapseComponent } from './theme/layout/admin/navigation/nav-conten
 import { NavGroupComponent } from './theme/layout/admin/navigation/nav-content/nav-group/nav-group.component';
 import { NavItemComponent } from './theme/layout/admin/navigation/nav-content/nav-item/nav-item.component';
 import { SharedModule } from './theme/shared/shared.module';
+import { IbrixAppModule } from './ibrix-app/ibrix-app.module';
 
 @NgModule({
   declarations: [
@@ -30,20 +31,8 @@ import { SharedModule } from './theme/shared/shared.module';
     AdminComponent,
     GuestComponent,
     ConfigurationComponent,
-    NavBarComponent,
-    NavigationComponent,
-    NavLeftComponent,
-    NavRightComponent,
-    NavSearchComponent,
-    ChatMsgComponent,
-    ChatUserListComponent,
-    FriendComponent,
-    NavContentComponent,
-    NavItemComponent,
-    NavCollapseComponent,
-    NavGroupComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, IbrixAppModule],
   providers: [],
   bootstrap: [AppComponent]
 })
