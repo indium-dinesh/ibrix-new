@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './theme/layout/admin/admin.component';
 import { GuestComponent } from './theme/layout/guest/guest.component';
-import { ConfigurationComponent } from './theme/layout/admin/configuration/configuration.component';
 import { NavBarComponent } from './theme/layout/admin/nav-bar/nav-bar.component';
 import { NavigationComponent } from './theme/layout/admin/navigation/navigation.component';
 import { NavLeftComponent } from './theme/layout/admin/nav-bar/nav-left/nav-left.component';
@@ -30,7 +29,6 @@ import { IbrixAppModule } from './ibrix-app/ibrix-app.module';
     AppComponent,
     AdminComponent,
     GuestComponent,
-    ConfigurationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, IbrixAppModule],
   providers: [],
