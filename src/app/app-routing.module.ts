@@ -27,6 +27,10 @@ const routes: Routes = [
         path: 'login',
         component: LoginComponent
       },
+      // {
+      //   path: 'migration',
+      //   loadChildren: () => import('./ibrix-app/migration/migration.module').then((m) => m.MigrationModule)
+      // }
       {
         path: 'migration',
         children: [
