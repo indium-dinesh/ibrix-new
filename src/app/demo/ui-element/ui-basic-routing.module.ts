@@ -1,33 +1,60 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import ButtonComponent from './button/button.component';
+import BreadcrumbComponent from './breadcrumb/breadcrumb.component';
+import CollapseComponent from './collapse/collapse.component';
+import TabsPillsComponent from './tabs-pills/tabs-pills.component';
+import TypographyComponent from './typography/typography.component';
+import BadgeComponent from './badge/badge.component';
+import { MigrateDataComponent } from 'src/app/ibrix-app/migration/migrate-data/migrate-data.component';
+import { EtlScriptsComponent } from 'src/app/ibrix-app/migration/etl-scripts/etl-scripts.component';
+import { AssessmentComponent } from 'src/app/ibrix-app/migration/assessment/assessment.component';
+import { ConfigurationComponent } from 'src/app/ibrix-app/migration/configuration/configuration.component';
+
 const routes: Routes = [
   {
     path: '',
     children: [
       {
+        path: 'configuration',
+        component: ConfigurationComponent
+      },
+      {
+        path: 'assessment',
+        component: AssessmentComponent
+      },
+      {
+        path: 'etl-scripts',
+        component: EtlScriptsComponent
+      },
+      {
+        path: 'migrate-data',
+        component: MigrateDataComponent
+      },
+      {
         path: 'badges',
-        loadComponent: () => import('./badge/badge.component')
+        component: BadgeComponent
       },
       {
         path: 'button',
-        loadComponent: () => import('./button/button.component')
+        component: ButtonComponent
       },
       {
         path: 'breadcrumb-paging',
-        loadComponent: () => import('./breadcrumb/breadcrumb.component')
+        component: BreadcrumbComponent
       },
       {
         path: 'collapse',
-        loadComponent: () => import('./collapse/collapse.component')
+        component: CollapseComponent
       },
       {
         path: 'tabs-pills',
-        loadComponent: () => import('./tabs-pills/tabs-pills.component')
+        component: TabsPillsComponent
       },
       {
         path: 'typography',
-        loadComponent: () => import('./typography/typography.component')
+        component: TypographyComponent
       }
     ]
   }

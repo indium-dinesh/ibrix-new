@@ -23,7 +23,6 @@ import { NavLeftComponent } from '../layout/admin/nav-bar/nav-left/nav-left.comp
 import { NavRightComponent } from '../layout/admin/nav-bar/nav-right/nav-right.component';
 import { NavSearchComponent } from '../layout/admin/nav-bar/nav-left/nav-search/nav-search.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-import { BrowserModule } from '@angular/platform-browser';
 import { ChatMsgComponent } from '../layout/admin/nav-bar/nav-right/chat-msg/chat-msg.component';
 import { ChatUserListComponent } from '../layout/admin/nav-bar/nav-right/chat-user-list/chat-user-list.component';
 import { FriendComponent } from '../layout/admin/nav-bar/nav-right/chat-user-list/friend/friend.component';
@@ -31,35 +30,65 @@ import { NavContentComponent } from '../layout/admin/navigation/nav-content/nav-
 import { NavItemComponent } from '../layout/admin/navigation/nav-content/nav-item/nav-item.component';
 import { NavCollapseComponent } from '../layout/admin/navigation/nav-content/nav-collapse/nav-collapse.component';
 import { NavGroupComponent } from '../layout/admin/navigation/nav-content/nav-group/nav-group.component';
+import ButtonComponent from 'src/app/demo/ui-element/button/button.component';
+import BadgeComponent from 'src/app/demo/ui-element/badge/badge.component';
+import TypographyComponent from 'src/app/demo/ui-element/typography/typography.component';
+import TabsPillsComponent from 'src/app/demo/ui-element/tabs-pills/tabs-pills.component';
+import CollapseComponent from 'src/app/demo/ui-element/collapse/collapse.component';
 
 @NgModule({
-  imports: [
+  declarations: [
+    CardComponent,
+    DataFilterPipe,
+    SpinnerComponent,
+    NavBarComponent,
+    NavigationComponent,
+    NavLeftComponent,
+    NavRightComponent,
+    NavSearchComponent,
+    ChatMsgComponent,
+    ChatUserListComponent,
+    FriendComponent,
+    NavContentComponent,
+    NavItemComponent,
+    NavCollapseComponent,
+    NavGroupComponent,
+
+    ButtonComponent,
+    BadgeComponent,
+    BreadcrumbComponent,
+    CollapseComponent,
+    TabsPillsComponent,
+    TypographyComponent,
+  ],
+   imports: [
     AppRoutingModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    CardComponent,
-    BreadcrumbComponent,
+    // BreadcrumbComponent,
     NgbDropdownModule,
     NgbNavModule,
     NgbModule,
     NgScrollbarModule,
     NgClickOutsideDirective
   ],
+  
+  
   exports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    CardComponent,
     BreadcrumbComponent,
     DataFilterPipe,
-    SpinnerComponent,
     NgbModule,
     NgbDropdownModule,
     NgbNavModule,
     NgScrollbarModule,
     NgClickOutsideDirective,
     
+    CardComponent,
+    SpinnerComponent,
     
     NavBarComponent,
     NavigationComponent,
@@ -72,23 +101,15 @@ import { NavGroupComponent } from '../layout/admin/navigation/nav-content/nav-gr
     NavContentComponent,
     NavItemComponent,
     NavCollapseComponent,
-    NavGroupComponent
-  ],
-  declarations: [
-    DataFilterPipe,
-    SpinnerComponent,
-    NavBarComponent,
-    NavigationComponent,
-    NavLeftComponent,
-    NavRightComponent,
-    NavSearchComponent,
-    ChatMsgComponent,
-    ChatUserListComponent,
-    FriendComponent,
-    NavContentComponent,
-    NavItemComponent,
-    NavCollapseComponent,
-    NavGroupComponent
+    NavGroupComponent,
+
+
+    ButtonComponent,
+    BadgeComponent,
+    BreadcrumbComponent,
+    CollapseComponent,
+    TabsPillsComponent,
+    TypographyComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

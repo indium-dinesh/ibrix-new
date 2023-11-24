@@ -4,8 +4,8 @@ import { SharedModule } from 'src/app/theme/shared/shared.module';
 
 @Component({
   selector: 'app-tabs-pills',
-  standalone: true,
-  imports: [CommonModule, SharedModule],
+  // standalone: true,
+  // imports: [CommonModule, SharedModule],
   templateUrl: './tabs-pills.component.html',
   styleUrls: ['./tabs-pills.component.scss']
 })

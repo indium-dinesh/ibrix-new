@@ -4,8 +4,8 @@ import { SharedModule } from 'src/app/theme/shared/shared.module';
 
 @Component({
   selector: 'app-collapse',
-  standalone: true,
-  imports: [CommonModule, SharedModule],
+  // standalone: true,
+  // imports: [CommonModule, SharedModule],
   templateUrl: './collapse.component.html',
   styleUrls: ['./collapse.component.scss']
 })

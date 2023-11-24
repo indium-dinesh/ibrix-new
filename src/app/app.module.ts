@@ -1,5 +1,5 @@
 // Angular Import
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,13 +25,10 @@ import { SharedModule } from './theme/shared/shared.module';
 import { IbrixAppModule } from './ibrix-app/ibrix-app.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AdminComponent,
-    GuestComponent,
-  ],
+  declarations: [AppComponent, AdminComponent, GuestComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, IbrixAppModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

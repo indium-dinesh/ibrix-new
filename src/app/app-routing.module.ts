@@ -7,11 +7,15 @@ import { AdminComponent } from './theme/layout/admin/admin.component';
 import { GuestComponent } from './theme/layout/guest/guest.component';
 import { IbrixAppComponent } from './ibrix-app/ibrix-app.component';
 import { LoginComponent } from './ibrix-app/login/login.component';
+import { ConfigurationComponent } from './ibrix-app/migration/configuration/configuration.component';
+import { AssessmentComponent } from './ibrix-app/migration/assessment/assessment.component';
+import { EtlScriptsComponent } from './ibrix-app/migration/etl-scripts/etl-scripts.component';
+import { MigrateDataComponent } from './ibrix-app/migration/migrate-data/migrate-data.component';
 
 const routes: Routes = [
   /**  New URL Paths */
   {
-    path:'',
+    path: '',
     component: IbrixAppComponent,
     children: [
       {
@@ -23,16 +27,31 @@ const routes: Routes = [
         path: 'login',
         component: LoginComponent
       },
+      // {
+      //   path: 'migration',
+      //   loadChildren: () => import('./ibrix-app/migration/migration.module').then((m) => m.MigrationModule)
+      // }
       {
-        path: 'migration',
-        loadChildren: () => import('./ibrix-app/migration/migration.module').then((m) => m.MigrationModule)
+        path: 'configuration',
+        component: ConfigurationComponent
+      },
+      {
+        path: 'assessment',
+        component: AssessmentComponent
+      },
+      {
+        path: 'etl-scripts',
+        component: EtlScriptsComponent
+      },
+      {
+        path: 'migrate-data',
+        component: MigrateDataComponent
       }
-
     ]
   },
   /**  Old URL Paths */
   {
-    path: 'old',
+    path: '',
     component: AdminComponent,
     children: [
       {
