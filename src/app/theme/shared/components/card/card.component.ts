@@ -8,11 +8,11 @@ import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-card',
-  standalone: true,
-  imports: [CommonModule],
+  // standalone: true,
+  // imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
-  providers: [NgbDropdownConfig],
+  // providers: [NgbDropdownConfig],
   animations: [
     trigger('collapsedCard', [
       state(
