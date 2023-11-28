@@ -12,6 +12,10 @@ export class ConfigurationComponent implements OnInit, OnDestroy {
   constructor(private service: MigrationService){}
   /* Source table */
   private dbSubscribe !:Subscription;
+  sourceList: any = [];
+  addNewSource(){
+    alert("add1")
+  }
 
   /* Destination table */
   
@@ -19,6 +23,7 @@ export class ConfigurationComponent implements OnInit, OnDestroy {
     this.dbSubscribe = this.service.getAllDBdata().subscribe ({
       next: (res)=>{
         console.log("API response", res);
+        this.sourceList = res;
       },
       error: (error) => {
         console.log("error ", error)

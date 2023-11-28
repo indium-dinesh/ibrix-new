@@ -3,6 +3,9 @@
     <h5 *ngIf="!customHeader">{{ cardTitle }}</h5>
     <span *ngIf="!customDate" class="d-block">{{ CardDate }}</span>
     <div class="card-header-right" *ngIf="this.options && !customHeader">
+      <ng-container *ngIf="customHeaderBtn1">
+        <button type="button" class={{customHeaderBtn1.class}} (click)=custombtnCallback1()> <i class={{customHeaderBtn1.icon}}></i>{{customHeaderBtn1.label}} </button>
+      </ng-container>
       <div class="btn-group card-option dropdown" ngbDropdown>
         <button type="button" class="btn dropdown-toggle btn-icon" ngbDropdownToggle>
           <i class="feather icon-more-horizontal"></i>
@@ -25,9 +28,9 @@
           <li class="dropdown-item reload-card" (click)="cardRefresh()">
             <a href="javascript:"><i class="feather icon-refresh-cw"></i> Reload</a>
           </li>
-          <li class="dropdown-item close-card" (click)="cardRemoveAction()">
+          <!-- <li class="dropdown-item close-card" (click)="cardRemoveAction()">
             <a href="javascript:"><i class="feather icon-trash"></i> Remove</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

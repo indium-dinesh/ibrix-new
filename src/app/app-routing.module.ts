@@ -11,6 +11,13 @@ import { ConfigurationComponent } from './ibrix-app/migration/configuration/conf
 import { AssessmentComponent } from './ibrix-app/migration/assessment/assessment.component';
 import { EtlScriptsComponent } from './ibrix-app/migration/etl-scripts/etl-scripts.component';
 import { MigrateDataComponent } from './ibrix-app/migration/migrate-data/migrate-data.component';
+import BadgeComponent from './demo/ui-element/badge/badge.component';
+import ButtonComponent from './demo/ui-element/button/button.component';
+import BreadcrumbComponent from './demo/ui-element/breadcrumb/breadcrumb.component';
+import CollapseComponent from './demo/ui-element/collapse/collapse.component';
+import TabsPillsComponent from './demo/ui-element/tabs-pills/tabs-pills.component';
+import TypographyComponent from './demo/ui-element/typography/typography.component';
+import FormElementsComponent from './demo/forms & tables/form-elements/form-elements.component';
 
 const routes: Routes = [
   /**  New URL Paths */
@@ -71,7 +78,54 @@ const routes: Routes = [
       },
       {
         path: 'component',
-        loadChildren: () => import('./demo/ui-element/ui-basic.module').then((m) => m.UiBasicModule)
+        // loadChildren: () => import('./demo/ui-element/ui-basic.module').then((m) => m.UiBasicModule)
+        children: [
+          {
+            path: 'configuration',
+            component: ConfigurationComponent
+          },
+          {
+            path: 'assessment',
+            component: AssessmentComponent
+          },
+          {
+            path: 'etl-scripts',
+            component: EtlScriptsComponent
+          },
+          {
+            path: 'migrate-data',
+            component: MigrateDataComponent
+          },
+          {
+            path: 'badges',
+            component: BadgeComponent
+          },
+          {
+            path: 'button',
+            component: ButtonComponent
+          },
+          {
+            path: 'breadcrumb-paging',
+            component: BreadcrumbComponent
+          },
+          {
+            path: 'collapse',
+            component: CollapseComponent
+          },
+          {
+            path: 'tabs-pills',
+            component: TabsPillsComponent
+          },
+          {
+            path: 'typography',
+            component: TypographyComponent
+          
+          },
+          {
+            path: 'forms',
+            component: FormElementsComponent
+          }
+        ]
       },
       {
         path: 'chart',

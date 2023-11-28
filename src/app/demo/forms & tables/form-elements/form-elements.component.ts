@@ -6,8 +6,8 @@ import { ColorPickerModule } from 'ngx-color-picker';
 
 @Component({
   selector: 'app-form-elements',
-  standalone: true,
-  imports: [CommonModule, SharedModule, NgbDropdownModule, ColorPickerModule],
+  // standalone: true,
+  // imports: [CommonModule, SharedModule, NgbDropdownModule, ColorPickerModule],
   templateUrl: './form-elements.component.html',
   styleUrls: ['./form-elements.component.scss']
 })

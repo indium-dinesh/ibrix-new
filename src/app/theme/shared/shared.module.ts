@@ -35,6 +35,7 @@ import BadgeComponent from 'src/app/demo/ui-element/badge/badge.component';
 import TypographyComponent from 'src/app/demo/ui-element/typography/typography.component';
 import TabsPillsComponent from 'src/app/demo/ui-element/tabs-pills/tabs-pills.component';
 import CollapseComponent from 'src/app/demo/ui-element/collapse/collapse.component';
+import FormElementsComponent from 'src/app/demo/forms & tables/form-elements/form-elements.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import CollapseComponent from 'src/app/demo/ui-element/collapse/collapse.compone
     CollapseComponent,
     TabsPillsComponent,
     TypographyComponent,
+    FormElementsComponent
   ],
    imports: [
     AppRoutingModule,
@@ -110,6 +112,7 @@ import CollapseComponent from 'src/app/demo/ui-element/collapse/collapse.compone
     CollapseComponent,
     TabsPillsComponent,
     TypographyComponent,
+    FormElementsComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

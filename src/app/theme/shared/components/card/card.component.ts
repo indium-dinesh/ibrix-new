@@ -1,6 +1,6 @@
 // Angular Import
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { animate, AUTO_STYLE, state, style, transition, trigger } from '@angular/animations';
 
 // bootstrap import
@@ -62,7 +62,8 @@ export class CardComponent implements OnInit {
   @Input() CardDate!: string;
   @Input() isCardFooter: boolean;
   @Input() footerClass!: string;
-
+  @Input() customHeaderBtn1: any;
+  @Output() customHeaderBtnCallback = new EventEmitter()
   animation!: string;
   fullIcon: string;
   isAnimating: boolean;
@@ -137,5 +138,8 @@ export class CardComponent implements OnInit {
 
   cardRemoveAction() {
     this.cardRemove = this.cardRemove === 'closed' ? 'open' : 'closed';
+  }
+  custombtnCallback1(){
+    this.customHeaderBtnCallback.emit()
   }
 }

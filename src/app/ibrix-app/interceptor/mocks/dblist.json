@@ -1,32 +1,10 @@
 [
   {
-    "type": "MySQL",
-    "dbName": "LiFungDB",
-    "serverAdd": "mysql.lifung.com",
-    "Action": "Read"
-  },
-  {
-    "type": "PostgreSQL",
-    "dbName": "SharkNinjaDB",
-    "serverAdd": "postgresql.sharkninja.com",
-    "Action": "Write"
-  },
-  {
-    "type": "SQL Server",
-    "dbName": "SiemensDB",
-    "serverAdd": "sqlserver.siemens.com",
-    "Action": "Read"
-  },
-  {
-    "type": "MongoDB",
-    "dbName": "StriimDB",
-    "serverAdd": "mongodb.striim.com",
-    "Action": "Write"
-  },
-  {
-    "type": "Oracle",
-    "dbName": "AtlasAirDB",
-    "serverAdd": "oracle.atlasair.com",
-    "Action": "Read"
+    "name": "Purnima",
+    "host": "localhost",
+    "dbtype": "SQL",
+    "user": "Ra12",
+    "password": "R1234",
+    "description": "this is for testing purpose"
   }
 ]
