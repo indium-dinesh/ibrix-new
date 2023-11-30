@@ -9,5 +9,5 @@ export class TargetFormComponent {
   @Input() data: any;
   @Output() submitForm = new EventEmitter();
   @Output() closeForm = new EventEmitter();
-
+  directory:string = ''
 }

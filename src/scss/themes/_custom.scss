@@ -83,3 +83,26 @@
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+
+
+.radio.radio-bronze input[type=radio]:checked + .cr:before {
+  border-color: #CD7F32  !important;
+}
+
+.radio.radio-silver input[type=radio]:checked + .cr:before {
+  border-color: #B0B0B0 !important;
+}
+.radio.radio-gold input[type=radio]:checked + .cr:before {
+  border-color: #FFD700 !important;
+}
+
+.radio.radio-bronze input[type=radio]:checked + .cr:after {
+  background: #CD7F32  !important;
+}
+
+.radio.radio-silver input[type=radio]:checked + .cr:after {
+  background: #B0B0B0 !important;
+}
+.radio.radio-gold input[type=radio]:checked + .cr:after {
+  background: #FFD700 !important;
+}

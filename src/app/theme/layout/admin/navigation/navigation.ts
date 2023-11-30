@@ -36,19 +36,19 @@ export const NavigationItems: NavigationItem[] = [
         title: 'Assessment',
         type: 'item',
         url: '/migration/assessment',
-        icon: 'feather icon-check-squre'
+        icon: 'feather icon-pie-chart'
       },{
         id: 'etl-scripts',
         title: 'ETL Scripts',
         type: 'item',
         url: '/migration/etl-scripts',
-        icon: 'feather icon-book-open'
+        icon: 'feather icon-activity'
       },{
         id: 'migrate-data',
         title: 'Migrate Data',
         type: 'item',
         url: '/migration/migrate-data',
-        icon: 'feather icon-upload  '
+        icon: 'feather icon-repeat'
       },
     ]
   },
