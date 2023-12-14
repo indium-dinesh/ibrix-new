@@ -1,0 +1,84 @@
+.db-summay-box {
+    margin: 17px !important;
+    display: grid;
+    padding: 15px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05) !important;
+    -webkit-box-shadow: 0px 5px 20px rgb(30 136 229 / 30%) !important;
+}
+
+.count {
+    font-size: 24px;
+    margin: 0.5rem;
+}
+
+.border-right {
+    border-right: 1px solid #26c6da;
+}
+
+.db-summay-box:hover {
+    background-color: #26c6da;
+    color: #fff;
+    cursor: pointer;
+}
+
+.db-summay-box.active {
+    border: 1px solid #26c6da;
+}
+
+
+.first-table {
+    width: 100%;
+}
+
+.first-table:has(+ .second-table) {
+    width: 50%;
+}
+
+.second-table {
+    width: 50%;
+}
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Prevent cards from wrapping to the next line */
+    justify-content: space-between;
+    /* Adjust as needed to control the spacing between cards */
+}
+
+.card-item {
+    flex-basis: calc(33.33% - 10px);
+    flex: 1;
+    /* Distribute available space evenly among cards */
+    margin-right: 10px;
+    /* Adjust as needed to control the space between cards */
+}
+
+.action-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spacer {
+    flex-grow: 1;
+    /* Allows the spacer to grow and push the buttons to the edges */
+}
+
+.summay-box {
+    width: 100%;
+    cursor: pointer;
+}
+
+#summmaryreportChart {
+    max-width: 650px;
+    margin: 35px auto;
+}
+
+.highlight {
+    background: pink;
+}

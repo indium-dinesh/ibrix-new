@@ -1,1 +1,137 @@
-<p>assessment works!</p>
+<div *ngIf="!showSummary" class="row">
+    <div class="col-xl-12">
+        <div class="col-xl-12">
+            <app-card [options]="true" [cardTitle]="'Server List'" blockClass="table-border-style">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Databases</th>
+                                <th>Size (in GB) </th>
+                                <th>Last Run Date</th>
+                                <th>Action </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of targetList; let i = index;">
+                                <th scope="row">{{i+1}}</th>
+                                <td>Singapore CSAT DB</td>
+                                <td>DB containing lending details of the clients</td>
+                                <td>12</td>
+                                <td>192</td>
+                                <td>13/12/2023</td>
+                                <td>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <button type="button" (click)="showSummary = true"
+                                            class="btn btn-icon btn-outline-primary d-inline-flex">
+                                            <i class="feather icon-play"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-icon btn-outline-info d-inline-flex">
+                                            <i class="feather icon-edit"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-icon btn-outline-danger d-inline-flex">
+                                            <i class="feather icon-trash-2"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </app-card>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="showSummary">
+    <div class="col-xl-12">
+        <div class="col-xl-12">
+            <app-card [cardTitle]="'Database List for Singapore CSAT DB '" [options]="true"
+                blockClass="table-border-style">
+                <div class="d-flex my-4">
+                    <div class="border-right summay-box">
+                        <div class="count text-center"> 12 </div>
+                        <div class="text-center"> Databases </div>
+                    </div>
+                    <div class="border-right summay-box">
+                        <div class="count text-center"> 259 </div>
+                        <div class="text-center"> Stored Procedures </div>
+                    </div>
+                    <div class="border-right summay-box">
+                        <div class="count text-center"> 27 / 87
+                        </div>
+                        <div class="text-center"> Datatypes </div>
+                    </div>
+                    <div class="border-right summay-box">
+                        <div class="count text-center"> 295 </div>
+                        <div class="text-center"> Primary Keys </div>
+                    </div>
+                    <div class="border-right summay-box">
+                        <div class="count text-center">279 </div>
+                        <div class="text-center"> Foreign Keys </div>
+                    </div>
+                    <div class="summay-box">
+                        <div class="count text-center">629 </div>
+                        <div class="text-center"> Indexes </div>
+                    </div>
+                </div>
+            </app-card>
+            <br>
+            <app-card [options]="true" [cardTitle]="'Server List'" blockClass="table-border-style">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Database</th>
+                                <th>Size </th>
+                                <th>User Tables </th>
+                                <th>Stored procedure </th>
+                                <th>Indexes</th>
+                                <th>Trigger </th>
+                                <th>Primary Count</th>
+                                <th>Functions</th>
+                                <th>Data Type Review </th>
+                                <th>Views </th>
+                                <th>Data Fields</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of targetList; let i = index;">
+                                <th scope="row">{{i+1}}</th>
+                                <td>CSAT DB-1</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <button type="button" (click)="showSummary = true"
+                                            class="btn btn-icon btn-outline-primary d-inline-flex">
+                                            <i class="feather icon-eye"></i>
+                                        </button>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </app-card>
+
+
+
+        </div>
+    </div>
+</div>
