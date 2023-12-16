@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./etl-scripts.component.scss']
 })
 export class EtlScriptsComponent {
+  customScriptBtn:any = {class: 'btn btn-outline-primary', icon: 'feather icon-plus-squre', label: 'Add ETL Script'}
+  showMigrationForm: boolean = false;
+  addNewScript(){
+    this.showMigrationForm = true;
 
+  }
 }

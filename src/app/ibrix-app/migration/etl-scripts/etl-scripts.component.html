@@ -1,1 +1,107 @@
-<p>etl-scripts works!</p>
+<div class="col-xl-12">
+  <app-card cardTitle="Migration Scripts" [options]="true" blockClass="table-border-style"
+    [customHeaderBtn1]="customScriptBtn" (customHeaderBtnCallback)="addNewScript()" *ngIf="!showMigrationForm">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>ETL Name</td>
+            <td>Source Name</td>
+            <td>ETL Name</td>
+            <td>20-04-2023</td>
+            <td>
+              <div class="d-flex flex-wrap gap-2">
+                <button type="button" class="btn btn-icon btn-outline-primary d-inline-flex">
+                  <i class="feather icon-eye"></i>
+                </button>
+                <button type="button" class="btn btn-icon btn-outline-info d-inline-flex">
+                  <i class="feather icon-edit"></i>
+                </button>
+                <button type="button" class="btn btn-icon btn-outline-primary d-inline-flex">
+                  <i class="feather icon-play"></i>
+                </button>
+                <button type="button" class="btn btn-icon btn-outline-danger d-inline-flex">
+                  <i class="feather icon-trash-2"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </app-card>
+  <app-card cardTitle="Manage Migration Script" *ngIf="showMigrationForm">
+    <div class="col-md-12 row">
+      <div class="col-md-6">
+        <h6 class="title">Select Source</h6>
+        <div class="btn-page">
+          <button type="button" class="btn btn-outline-primary">
+            Source 1
+          </button>
+          <button data-pc-animate="slide-in-right" type="button" class="btn btn-primary">
+            Source 2
+          </button>
+          <button data-pc-animate="slide-in-bottom" type="button" class="btn btn-outline-primary">
+            Source 3
+          </button>
+          <button data-pc-animate="newspaper" type="button" class="btn btn-outline-primary">
+            Source 4
+          </button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h6 class="title">Select Source Database</h6>
+        <div class="btn-page">
+          <button type="button" class="btn btn-outline-primary">
+            DB 1
+          </button>
+          <button type="button" class="btn btn-primary">
+            DB 2
+          </button>
+        </div>
+      </div>
+      <div class="col-md-12">&nbsp;</div>
+      <div class="col-md-6">
+        <h6 class="title">Select Destination</h6>
+        <div class="btn-page">
+          <button type="button" class="btn btn-primary">
+            Target 1
+          </button>
+          <button type="button" class="btn btn-outline-primary">
+            Target 2
+          </button>
+          <button type="button" class="btn btn-outline-primary">
+            Target 3
+          </button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group col-md-12">
+          <label for="inputAddress">Name</label>
+          <input placeholder="ETL Script Name" class="form-control" name="etl_script_name" />
+        </div>
+        <div class="form-group col-md-12">
+          <label for="inputAddress">Name</label>
+          <textarea placeholder="ETL Script Name" class="form-control" name="etl_script_name"></textarea>
+        </div>
+        <div class="d-flex flex-wrap gap-2">
+
+          <button type="submit" class="btn btn-primary" (click)="showMigrationForm = false">Create Script</button>
+          <button type="submit" class="btn btn-warning" (click)="showMigrationForm = false">Close</button>
+        </div>
+      </div>
+    </div>
+  </app-card>
+
+</div>
