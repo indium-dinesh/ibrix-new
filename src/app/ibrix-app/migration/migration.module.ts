@@ -7,6 +7,7 @@ import { MigrateDataComponent } from './migrate-data/migrate-data.component';
 import { SharedModule } from 'src/app/theme/shared/shared.module';
 import { SourceFormComponent } from './configuration/source-form/source-form.component';
 import { TargetFormComponent } from './configuration/target-form/target-form.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 
@@ -14,6 +15,7 @@ import { TargetFormComponent } from './configuration/target-form/target-form.com
   imports: [
     CommonModule,
     SharedModule,
+    NgApexchartsModule
   ],
   declarations: [
     ConfigurationComponent,

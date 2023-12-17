@@ -21,6 +21,7 @@
 }
 
 .table {
+
   td,
   th {
     font-family: $theme-font-family;
@@ -33,7 +34,7 @@
   }
 }
 
-.h-list-body .chat-messages .chat-menu-reply > div p,
+.h-list-body .chat-messages .chat-menu-reply>div p,
 .pcoded-header.header-blue a.h-back-user-list {
   color: $theme-font-color;
 }
@@ -43,12 +44,13 @@
 }
 
 .pcoded-navbar.menu-light:not(.theme-horizontal) {
-  .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
-  .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a,
-  .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li:hover > a,
-  .pcoded-inner-navbar > app-nav-group > app-nav-item > li.active > a,
-  .pcoded-inner-navbar > app-nav-group > app-nav-item > li.pcoded-trigger > a,
-  .pcoded-inner-navbar > app-nav-group > app-nav-item > li:hover > a {
+
+  .pcoded-inner-navbar>app-nav-group>app-nav-collapse>li.active>a,
+  .pcoded-inner-navbar>app-nav-group>app-nav-collapse>li.pcoded-trigger>a,
+  .pcoded-inner-navbar>app-nav-group>app-nav-collapse>li:hover>a,
+  .pcoded-inner-navbar>app-nav-group>app-nav-item>li.active>a,
+  .pcoded-inner-navbar>app-nav-group>app-nav-item>li.pcoded-trigger>a,
+  .pcoded-inner-navbar>app-nav-group>app-nav-item>li:hover>a {
     background: rgba(202, 202, 202, 0.3);
 
     &:before {
@@ -85,24 +87,34 @@
 }
 
 
-.radio.radio-bronze input[type=radio]:checked + .cr:before {
-  border-color: #CD7F32  !important;
+.radio.radio-bronze input[type=radio]:checked+.cr:before {
+  border-color: #CD7F32 !important;
 }
 
-.radio.radio-silver input[type=radio]:checked + .cr:before {
+.radio.radio-silver input[type=radio]:checked+.cr:before {
   border-color: #B0B0B0 !important;
 }
-.radio.radio-gold input[type=radio]:checked + .cr:before {
+
+.radio.radio-gold input[type=radio]:checked+.cr:before {
   border-color: #FFD700 !important;
 }
 
-.radio.radio-bronze input[type=radio]:checked + .cr:after {
-  background: #CD7F32  !important;
+.radio.radio-bronze input[type=radio]:checked+.cr:after {
+  background: #CD7F32 !important;
 }
 
-.radio.radio-silver input[type=radio]:checked + .cr:after {
+.radio.radio-silver input[type=radio]:checked+.cr:after {
   background: #B0B0B0 !important;
 }
-.radio.radio-gold input[type=radio]:checked + .cr:after {
+
+.radio.radio-gold input[type=radio]:checked+.cr:after {
   background: #FFD700 !important;
+}
+
+.pchart-container {
+  width: 230px;
+  // height: 120px;
+  margin: 1rem;
+  background: #ffffff;
+  border-radius: 25px;
 }

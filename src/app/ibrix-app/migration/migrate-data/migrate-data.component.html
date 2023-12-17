@@ -1,1 +1,125 @@
-<p>migrate-data works!</p>
+<div class="col-xl-12">
+    <app-card cardTitle="Migration Scripts" [options]="true" blockClass="table-border-style" *ngIf="!viewMigrateData">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Source</th>
+                        <th>Destination</th>
+                        <th>Status</th>
+                        <th>Run Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Sc Name</td>
+                        <td>Source Name</td>
+                        <td>Target Name</td>
+                        <td>Completed</td>
+                        <td>20-04-2023</td>
+                        <td>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button type="button" class="btn btn-icon btn-outline-primary d-inline-flex"
+                                    (click)="viewMigrateData=true">
+                                    <i class="feather icon-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-icon btn-outline-primary d-inline-flex">
+                                    <i class="feather icon-play"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Sc Name</td>
+                        <td>Source Name</td>
+                        <td>Target Name</td>
+                        <td>In Progress <div class="spinner-grow spinner-grow-sm" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </app-card>
+    <app-card cardTitle="Migration Details" [options]="true" blockClass="table-border-style" [customHeaderBtn1]="customScriptBtn" (customHeaderBtnCallback)="close()" *ngIf="viewMigrateData">
+        
+        <div class="col-md-12 row d-flex justify-content-center">
+            <div class="card pchart-container">
+                <div class="card-body bg-patern">
+                    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [labels]="chartOptions.labels"
+                    [title]="chartOptions.title" [theme]="chartOptions.theme" [legend]="chartOptions.legend"
+                    [responsive]="chartOptions.responsive" [colors]="chartOptions.colors"></apx-chart>
+                </div>
+            </div>
+            <div class="card pchart-container">
+                <div class="card-body bg-patern">
+                    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [labels]="chartOptions.labels"
+                    [title]="chartOptions.title" [theme]="chartOptions.theme" [legend]="chartOptions.legend"
+                    [responsive]="chartOptions.responsive" [colors]="chartOptions.colors"></apx-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 row d-flex justify-content-center">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Object</th>
+                      <th>Selected</th>
+                      <th>Created</th>
+                      <th>Unprocessed</th>
+                      <th>Percentage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Schema</td>
+                      <td>6</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>100%</td>
+                    </tr>
+                    <tr>
+                      <td>Table</td>
+                      <td>6</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>100%</td>
+                    </tr>
+                    <tr>
+                      <td>Unique key Constrains</td>
+                      <td>6</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>100%</td>
+                    </tr>
+                    <tr>
+                      <td>Forgeign key Constrains</td>
+                      <td>6</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>100%</td>
+                    </tr>
+                    <tr>
+                      <td>Views</td>
+                      <td>6</td>
+                      <td>6</td>
+                      <td>0</td>
+                      <td>100%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+    </app-card>
+
+</div>
