@@ -63,7 +63,7 @@ export class CardComponent implements OnInit {
   @Input() isCardFooter: boolean;
   @Input() footerClass!: string;
   @Input() customHeaderBtn1: any;
-  @Output() customHeaderBtnCallback = new EventEmitter()
+  @Output() customHeaderBtnCallback = new EventEmitter();
   animation!: string;
   fullIcon: string;
   isAnimating: boolean;
@@ -126,7 +126,14 @@ export class CardComponent implements OnInit {
     this.collapsedCard = this.collapsedCard === 'collapsed' ? 'expanded' : 'collapsed';
     this.collapsedIcon = this.collapsedCard === 'collapsed' ? 'icon-plus' : 'icon-minus';
   }
-
+  expandedCard() {
+    this.collapsedCard = 'expanded';
+    this.collapsedIcon = 'icon-plus';
+  }
+  minimizeCard() {
+    this.collapsedCard = 'collapsed';
+    this.collapsedIcon = 'icon-minus';
+  }
   cardRefresh() {
     this.loadCard = true;
     this.cardClass = 'card-load';
@@ -139,7 +146,7 @@ export class CardComponent implements OnInit {
   cardRemoveAction() {
     this.cardRemove = this.cardRemove === 'closed' ? 'open' : 'closed';
   }
-  custombtnCallback1(){
-    this.customHeaderBtnCallback.emit()
+  custombtnCallback1() {
+    this.customHeaderBtnCallback.emit();
   }
 }

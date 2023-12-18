@@ -17,8 +17,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let row of targetList; let i = index;">
-                                <th scope="row">{{i+1}}</th>
+                            <tr>
+                                <th scope="row">1</th>
                                 <td>Singapore CSAT DB</td>
                                 <td>DB containing lending details of the clients</td>
                                 <td>12</td>
@@ -28,6 +28,9 @@
                                     <div class="d-flex flex-wrap gap-2">
                                         <button type="button" (click)="showSummary = true"
                                             class="btn btn-icon btn-outline-primary d-inline-flex">
+                                            <i class="feather icon-eye"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-icon btn-outline-primary d-inline-flex">
                                             <i class="feather icon-play"></i>
                                         </button>
                                         <button type="button" class="btn btn-icon btn-outline-info d-inline-flex">
@@ -50,38 +53,56 @@
 <div class="row" *ngIf="showSummary">
     <div class="col-xl-12">
         <div class="col-xl-12">
-            <app-card [cardTitle]="'Database List for Singapore CSAT DB '" [options]="true"
+            <app-card [cardTitle]="'Database List for Singapore CSAT DB '" [options]="true" #summaryCard
                 blockClass="table-border-style">
                 <div class="d-flex my-4">
-                    <div class="border-right summay-box">
-                        <div class="count text-center"> 12 </div>
-                        <div class="text-center"> Databases </div>
-                    </div>
-                    <div class="border-right summay-box">
-                        <div class="count text-center"> 259 </div>
-                        <div class="text-center"> Stored Procedures </div>
-                    </div>
-                    <div class="border-right summay-box">
-                        <div class="count text-center"> 27 / 87
+                    <div class="card pchart-container" [class.active]="selectDetailTable === 'db'"
+                        (click)="selectTopCard('db')">
+                        <div class="card-body bg-patern summay-box">
+                            <div class="count text-center"> 12 </div>
+                            <div class="text-center"> Databases </div>
                         </div>
-                        <div class="text-center"> Datatypes </div>
                     </div>
-                    <div class="border-right summay-box">
-                        <div class="count text-center"> 295 </div>
-                        <div class="text-center"> Primary Keys </div>
+                    <div class="card pchart-container" [class.active]="selectDetailTable === 'sp'"
+                        (click)="selectTopCard('sp')">
+                        <div class="card-body bg-patern summay-box">
+                            <div class="count text-center"> 12 </div>
+                            <div class="text-center"> Stored Procedures </div>
+                        </div>
                     </div>
-                    <div class="border-right summay-box">
-                        <div class="count text-center">279 </div>
-                        <div class="text-center"> Foreign Keys </div>
+                    <div class="card pchart-container" [class.active]="selectDetailTable === 'datatypes'"
+                        (click)="selectTopCard('datatypes')">
+                        <div class="card-body bg-patern summay-box">
+                            <div class="count text-center"> 12 </div>
+                            <div class="text-center"> Datatypes </div>
+                        </div>
                     </div>
-                    <div class="summay-box">
-                        <div class="count text-center">629 </div>
-                        <div class="text-center"> Indexes </div>
+                    <div class="card pchart-container" [class.active]="selectDetailTable === 'pk'"
+                        (click)="selectTopCard('pk')">
+                        <div class="card-body bg-patern summay-box">
+                            <div class="count text-center"> 12 </div>
+                            <div class="text-center"> Primary Keys </div>
+                        </div>
+                    </div>
+                    <div class="card pchart-container" [class.active]="selectDetailTable === 'fk'"
+                        (click)="selectTopCard('fk')">
+                        <div class="card-body bg-patern summay-box">
+                            <div class="count text-center"> 12 </div>
+                            <div class="text-center"> Foreign Keys </div>
+                        </div>
+                    </div>
+                    <div class="card pchart-container" [class.active]="selectDetailTable === 'index'"
+                        (click)="selectTopCard('index')">
+                        <div class="card-body bg-patern summay-box">
+                            <div class="count text-center"> 12 </div>
+                            <div class="text-center"> Indexes </div>
+                        </div>
                     </div>
                 </div>
             </app-card>
             <br>
-            <app-card [options]="true" [cardTitle]="'Server List'" blockClass="table-border-style">
+            <app-card [options]="true" [cardTitle]="'Databases'" blockClass="table-border-style"
+                *ngIf="selectDetailTable==='db'" #dbSummary>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -97,27 +118,27 @@
                                 <th>Functions</th>
                                 <th>Data Type Review </th>
                                 <th>Views </th>
-                                <th>Data Fields</th>
+                                <th>Action</th>
 
 
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let row of targetList; let i = index;">
-                                <th scope="row">{{i+1}}</th>
+                            <tr>
+                                <th scope="row">1</th>
                                 <td>CSAT DB-1</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>20</td>
+                                <td>100</td>
+                                <td>4</td>
+                                <td>700</td>
+                                <td>100</td>
+                                <td>120</td>
+                                <td>5</td>
+                                <td>60</td>
+                                <td>123</td>
                                 <td>
                                     <div class="d-flex flex-wrap gap-2">
-                                        <button type="button" (click)="showSummary = true"
+                                        <button type="button" (click)="openSubPanel()"
                                             class="btn btn-icon btn-outline-primary d-inline-flex">
                                             <i class="feather icon-eye"></i>
                                         </button>
@@ -129,9 +150,109 @@
                     </table>
                 </div>
             </app-card>
+            <app-card [options]="true" [cardTitle]="'Stored Procedures'" blockClass="table-border-style"
+                *ngIf="selectDetailTable==='sp'">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Complexity </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Sp1</td>
+                                <td>Easy</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Sp2</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Sp4</td>
+                                <td>Hard</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </app-card>
+            <app-card [cardTitle]="'Database Details'" [options]="true" blockClass="table-border-style"
+                *ngIf="displaySubdivision===true" [customHeaderBtn1]="customScriptBtn" (customHeaderBtnCallback)="closeDetailedView()">
+                <div class="d-flex my-4">
+                    <div class="card pchart-container" [class.active]="selectSubDetailTable === 'ssp'"
+                        (click)="selectLowCard('ssp')">
+                        <div class="card-body bg-patern summay-box">
+                            <div class="count text-center"> 12 </div>
+                            <div class="text-center"> Stored Procedures </div>
+                        </div>
+                    </div>
+                    <div class="card pchart-container" [class.active]="selectSubDetailTable === 'sdatatypes'"
+                        (click)="selectLowCard('sdatatypes')">
+                        <div class="card-body bg-patern summay-box">
+                            <div class="count text-center"> 12 </div>
+                            <div class="text-center"> Datatypes </div>
+                        </div>
+                    </div>
+                    <div class="card pchart-container" [class.active]="selectSubDetailTable === 'spk'"
+                        (click)="selectLowCard('spk')">
+                        <div class="card-body bg-patern summay-box">
+                            <div class="count text-center"> 12 </div>
+                            <div class="text-center"> Primary Keys </div>
+                        </div>
+                    </div>
+                    <div class="card pchart-container" [class.active]="selectSubDetailTable === 'sfk'"
+                        (click)="selectLowCard('sfk')">
+                        <div class="card-body bg-patern summay-box">
+                            <div class="count text-center"> 12 </div>
+                            <div class="text-center"> Foreign Keys </div>
+                        </div>
+                    </div>
+                    <div class="card pchart-container" [class.active]="selectSubDetailTable === 'sindex'"
+                        (click)="selectLowCard('sindex')">
+                        <div class="card-body bg-patern summay-box">
+                            <div class="count text-center"> 12 </div>
+                            <div class="text-center"> Indexes </div>
+                        </div>
+                    </div>
+                </div>
+            </app-card>
 
-
-
+            <app-card [options]="true" [cardTitle]="'Stored Procedures'" blockClass="table-border-style"
+                *ngIf="selectSubDetailTable==='ssp' && displaySubdivision===true">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Complexity </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Sp1</td>
+                                <td>Easy</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Sp2</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Sp4</td>
+                                <td>Hard</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </app-card>
         </div>
     </div>
 </div>

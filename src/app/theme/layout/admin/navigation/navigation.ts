@@ -52,7 +52,7 @@ export const NavigationItems: NavigationItem[] = [
       },
     ]
   },
-  /** Old navs */
+  /** Old navs 
   {
     id: 'navigation',
     title: 'Navigation',
@@ -237,5 +237,5 @@ export const NavigationItems: NavigationItem[] = [
         ]
       }
     ]
-  }
+  }*/
 ];

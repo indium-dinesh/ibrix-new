@@ -10,4 +10,11 @@ export class TargetFormComponent {
   @Output() submitForm = new EventEmitter();
   @Output() closeForm = new EventEmitter();
   directory:string = ''
+  friendly_name:string = ''
+  onSubmit(){
+    this.closeForm.emit()
+  }
+  close(){
+    this.closeForm.emit()
+  }
 }

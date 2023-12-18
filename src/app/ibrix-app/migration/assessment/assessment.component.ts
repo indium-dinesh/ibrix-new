@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MigrationService } from '../migration.service';
 import { Subscription } from 'rxjs';
 import {
@@ -10,8 +10,9 @@ import {
   ApexTooltip,
   ApexNonAxisChartSeries,
   ApexResponsive,
-  NgApexchartsModule,
+  NgApexchartsModule
 } from 'ng-apexcharts';
+import { CardComponent } from 'src/app/theme/shared/components/card/card.component';
 
 export interface VisitorChartOptions {
   series: ApexNonAxisChartSeries | any;
@@ -24,8 +25,8 @@ export interface VisitorChartOptions {
   stroke: any;
   dataLabels: ApexDataLabels | any;
   plotOptions: ApexPlotOptions | any;
-  title: any,
-  theme: any
+  title: any;
+  theme: any;
 }
 
 @Component({
@@ -34,84 +35,30 @@ export interface VisitorChartOptions {
   styleUrls: ['./assessment.component.scss']
 })
 export class AssessmentComponent {
-  private dbSubscribe !: Subscription;
-  sourceList: any = [];
   showSummary: boolean = false;
+  selectDetailTable: string = 'db';
+  selectSubDetailTable: string = 'ssp';
+  dbDetails: boolean = false;
+  displaySubdivision: boolean = false;
+  @ViewChild('summaryCard') summaryCard!: CardComponent;
+  @ViewChild('dbSummary') dbSummary!: CardComponent;
+  customScriptBtn: any = { class: 'btn btn-outline-danger', icon: 'feather', label: 'Close detailed view' };
 
-
-
-
-  constructor(private service: MigrationService) { }
-
-
-  private targetSubscribe !: Subscription;
-  displayTargetTable: boolean = true;
-  targetList: any = [];
-  customTargetBtn: any = { class: 'btn btn-outline-primary', icon: 'feather icon-plus-squre', label: 'Add Target Connection' }
-  targetData: any;
-  addNewTarget() {
-    this.displayTargetTable = !this.displayTargetTable;
-    this.customTargetBtn.label = this.displayTargetTable ? 'Add Target Connection' : 'Back';
-    this.targetData = {
-      title: 'Target',
-      edit: 'add',
-    }
+  selectTopCard(selection: string) {
+    this.selectDetailTable = selection;
   }
-  submitTargetForm(data: any) {
-    console.log("Submit Form", data)
+  selectLowCard(selection: string) {
+    this.selectSubDetailTable = selection;
   }
-  closeTargetForm() {
-    this.displayTargetTable = !this.displayTargetTable;
-    this.customTargetBtn.label = this.displayTargetTable ? 'Add Target Connection' : 'Back';
+  openSubPanel() {
+    this.summaryCard.minimizeCard();
+    this.dbSummary.minimizeCard();
+    this.displaySubdivision = true;
+    this.selectSubDetailTable = 'ssp';
   }
-  editTarget(row: any) {
-    this.displayTargetTable = !this.displayTargetTable;
-    this.customTargetBtn.label = this.displayTargetTable ? 'Add Target Connection' : 'Back';
-    this.targetData = {
-      title: 'Target',
-      edit: 'edit',
-      data: row
-    }
+  closeDetailedView() {
+    this.displaySubdivision = false;
+    this.summaryCard.expandedCard();
+    this.dbSummary.expandedCard();
   }
-  viewTarget(row: any) {
-    this.displayTargetTable = !this.displayTargetTable;
-    this.customTargetBtn.label = this.displayTargetTable ? 'Add Target Connection' : 'Back';
-    this.targetData = {
-      title: 'Target',
-      edit: 'view',
-      data: row
-    }
-  }
-
-  ngOnInit() {
-    this.dbSubscribe = this.service.getAllDBdata().subscribe({
-      next: (res) => {
-        console.log("API response", res);
-        this.targetList = res;
-      },
-      error: (error) => {
-        console.log("error ", error)
-      }
-    })
-  }
-  ngOnDestroy(): void {
-    if (this.dbSubscribe) this.dbSubscribe.unsubscribe();
-  }
-
-  /*  old assessment ui >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
